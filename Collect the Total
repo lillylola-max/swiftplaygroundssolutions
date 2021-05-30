@@ -1,0 +1,31 @@
+let totalGems = randomNumberOfGems
+var numberOfGemsCollected = 0
+
+func checkForGems() {
+    if isOnGem {
+        collectGem()
+        numberOfGemsCollected += 1
+    }
+}
+
+func turnAround() {
+    turnRight()
+    turnRight()
+}
+
+func CollectGems() {
+    moveForward()
+    checkForGems()
+    if isBlocked {
+        if !isBlockedRight {
+            turnRight()
+        } else if !isBlockedLeft {
+            turnLeft()
+        } else {
+            turnAround()
+        }
+    }
+}
+while numberOfGemsCollected < totalGems {
+    CollectGems()
+}
