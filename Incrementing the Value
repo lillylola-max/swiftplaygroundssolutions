@@ -1,0 +1,18 @@
+var GemCounter = 0
+
+func moveForwardCollectingGems() {
+    moveForward()
+    if isOnGem {
+        collectGem()
+        gemCounter = gemCounter + 1
+    }
+}
+func cleanUpRowofGems() {
+while !isBlocked {
+    moveForwardCollectingGems()
+}
+}
+while !isBlocked {
+cleanUpRowofGems()
+turnRight()
+}
