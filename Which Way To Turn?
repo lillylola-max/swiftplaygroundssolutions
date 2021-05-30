@@ -1,0 +1,19 @@
+func walkToggle() {
+    moveForward()
+    if isOnClosedSwitch {
+        toggleSwitch()
+        if isBlocked {
+            turnLeft()
+            
+        } else {
+            turnRight()
+            
+        }
+    }
+}
+
+while !isOnGem {
+    walkToggle()
+    
+} 
+collectGem()
