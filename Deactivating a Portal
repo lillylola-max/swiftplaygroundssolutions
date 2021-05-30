@@ -1,0 +1,21 @@
+greenPortal.isActive = false
+
+func turnAround() {
+    turnRight()
+    turnRight()
+}
+func toggleSwitches() {
+    moveForward()
+    moveForward()
+    moveForward()
+    turnLeft()
+    moveForward()
+    moveForward()
+    moveForward()
+    toggleSwitch()
+    turnAround()
+}
+
+toggleSwitches()
+toggleSwitches()
+toggleSwitches()
