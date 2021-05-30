@@ -1,0 +1,29 @@
+let totalGems = randomNumberOfGems
+var numberOfGems = 0
+
+func turnAround() {
+    turnRight()
+    turnRight()
+}
+
+func SwitchPortals() {
+    pinkPortal.isActive = !pinkPortal.isActive
+    bluePortal.isActive = !bluePortal.isActive
+}
+
+func CollectandWalk() {
+    if isOnGem {
+        collectGem()
+        numberOfGems += 1
+    }
+    if isBlocked {
+        turnAround()
+        SwitchPortals()
+    } else {
+        moveForward()
+    }
+}
+
+while !(numberOfGems == totalGems) {
+    CollectandWalk()
+}
