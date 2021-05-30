@@ -1,0 +1,23 @@
+var gemCounter = 0 
+func turnAround() {
+    turnRight()
+    turnRight()
+}
+
+func moveAndCollectGems() {
+    if isOnGem {
+        collectGem()
+        gemCounter = gemCounter + 1
+    }
+    moveForward()
+}
+
+
+
+while gemCounter < 7 {
+    if isBlocked {
+        turnAround()
+    }
+    moveAndCollectGems()
+}
+
