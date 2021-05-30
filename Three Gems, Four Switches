@@ -1,0 +1,36 @@
+var NumGems = 0
+
+var NumSwitches = 0
+
+func decideWhichWayToTurn()
+{
+    if isBlocked {
+        if isBlockedLeft {
+            turnRight()
+        }
+        if isBlockedRight {
+            turnLeft()
+        }
+    }
+}
+
+func collectGemsAndToggleSwitches() {
+    if isOnGem {
+        if NumGems < 3 {
+        collectGem()
+        NumGems = NumGems + 1
+    }
+    }
+    
+    if isOnClosedSwitch {
+        if NumSwitches < 4 {
+        toggleSwitch()
+        NumSwitches = NumSwitches + 1
+    }
+}
+}
+while NumSwitches < 4 { 
+    decideWhichWayToTurn()
+    moveForward()
+    collectGemsAndToggleSwitches()
+}
