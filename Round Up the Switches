@@ -1,0 +1,29 @@
+var numberOfSwitches = 0
+var numberOfGems = 0
+
+
+func wander() {
+    if isOnGem {
+        collectGem()
+        numberOfGems += 1
+    }
+    if isOnClosedSwitch {
+        toggleSwitch()
+        numberOfSwitches += 1
+    }
+    if isBlocked {
+        if isBlockedRight {
+            turnLeft()
+        } else if isBlockedLeft {
+            turnRight()
+        }
+    }
+    moveForward()
+}
+while !isOnClosedSwitch && !isOnOpenSwitch {
+    wander()
+}
+
+while numberOfSwitches < numberOfGems {
+    wander()
+}
