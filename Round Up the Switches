@@ -2,7 +2,7 @@ var numberOfSwitches = 0
 var numberOfGems = 0
 
 
-func wander() {
+func CollectandWalk() {
     if isOnGem {
         collectGem()
         numberOfGems += 1
@@ -21,9 +21,9 @@ func wander() {
     moveForward()
 }
 while !isOnClosedSwitch && !isOnOpenSwitch {
-    wander()
+    CollectandWalk()
 }
 
 while numberOfSwitches < numberOfGems {
-    wander()
+    CollectandWalk()
 }
